@@ -1,0 +1,173 @@
+@mixin mobile {
+  @media screen and (max-width:768px) {
+    @content;
+  }
+}
+
+:root {
+  --padding-margin: 2em;
+
+  @include mobile() {
+    --padding-margin: 1em;
+  }
+}
+
+[text-indent="4em"] {
+  --text-indent: 4em
+}
+
+[text-indent="5em"] {
+  --text-indent: 5em
+}
+
+[text-indent="6em"] {
+  --text-indent: 6em
+}
+
+body {
+  font-family: '宋体';
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #e7edf8;
+
+  @include mobile() {
+    margin: 0;
+  }
+
+  a {
+    color: #06c;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    line-height: 2;
+      span {
+        color: red;
+        font-weight: bold;
+      }
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  nav,
+  main {
+    background-color: #fbfbfb;
+  }
+
+  nav {
+    display: flex;
+    padding: var(--padding-margin);
+
+    &>img {
+      height: 50px;
+
+      @include mobile() {
+        height: 30px;
+      }
+
+      &:first-child {
+        padding-right: 16px;
+      }
+    }
+  }
+
+  .oneColumn {
+    padding: var(--padding-margin);
+  }
+
+  .pub_border {
+    border: 1px #dddddd solid;
+  }
+
+  hr {
+    border: 1px #dddddd solid;
+    margin: 2em;
+  }
+
+  .inline-word {
+    font-weight: 600;
+    width: var(--text-indent);
+  }
+
+  .indent {
+    text-indent: 2em;
+  }
+
+  .align {
+    text-align: justify;
+  }
+
+  main {
+    padding-bottom: 1px;
+
+    .breadcrumbNav {
+      background-color: #e7e7e7;
+      font-size: 14px;
+      padding: 1em var(--padding-margin);
+    }
+
+    h1 {
+      padding-top: 1em;
+      margin-top: 0;
+    }
+
+    #body-wrap {
+      margin: var(--padding-margin);
+
+      #content-inner {
+        .title {
+          font-size: 22px;
+        }
+
+        .catalogue {
+          padding-left: 2em;
+          margin-top: 2em;
+
+          a {
+            display: block;
+            margin-block-start: 1em;
+
+            &.section {
+              padding-left: 2em;
+            }
+          }
+        }
+
+        .main-body {
+          margin-top: 2em;
+
+          &>div {
+            display: flex;
+
+            &>div {
+              width: calc(100% - var(--text-indent));
+
+              @include mobile() {
+                display: inline-block;
+                margin-left: calc(0em - var(--text-indent));
+                width: 100%;
+
+                &>p:first-child {
+                  text-indent: var(--text-indent)
+                }
+
+                &>p:not(:first-child) {
+                  text-indent: 2em
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

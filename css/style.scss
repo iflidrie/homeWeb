@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+:root {
+  --ll-theme: #ea517f;
+  --ll-theme-op: #ea517f23;
+  --ll-theme-op-deep: #ea517fdd;
+  --ll-theme-none: #ea517f01;
+  --ll-red: #f9d3e3;
+  --ll-pink: #FF7C7C;
+  --ll-white: #fff;
+  --ll-white-op: rgba(255, 255, 255, 0.2);
+  --ll-black: #000;
+  --ll-black-op: rgba(0, 0, 0, 0.2);
+  --ll-none: rgba(0, 0, 0, 0);
+  --ll-gray: #a1a1a6;
+  --ll-gray-op: rgba(161, 161, 166, 0.2);
+  --ll-main: var(--ll-theme);
+  --ll-main-op: var(--ll-theme-op);
+  --ll-main-none: var(--ll-theme-none);
+  --style-border: 1px solid var(--ll-card-border);
+  --style-border-hover: 1px solid var(--ll-main);
+}
+
+:root {
+  --nav-height: 50px;
+  --nav-background-color: rgba(29, 29, 31, 0.702);
+  --nav-text-color: var(--ll-white);
+  --menu-background-color: #1d1d1f;
+  --menu-text-color: var(--ll-white);
+  --body-background-color: var(--ll-black);
+  --body-text-color: #f5f5f7;
+  --body-text-hover: var(--ll-main);
+  --body-text-gray: var(--ll-gray);
+  --body-link-color: var(--ll-main);
+  --body-router-background: #1d1d1f;
+  --footer-background: #1d1d1f;
+  --footer-text-color: #86868b;
+  --footer-link-color: var(--ll-theme);
+  --footer-title-color: #f5f5f7;
+}
+
+@font-face {
+  font-family: "title";
+  src: url('../font/Title.woff2') format('woff2');
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
